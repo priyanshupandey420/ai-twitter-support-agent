@@ -78,7 +78,9 @@ def classify_and_draft(tweet_text):
         # Fallback manual parsing if mime_type formatting introduces extra text
         json_start = text.find('{')
         json_end = text.rfind('}') + 1
-        return json.loads(text[json_start:json_end])
+        out = json.loads(text[json_start:json_end])
+        out['rag_history'] = similar_cases
+        return out
     except Exception as e:
         return {
             "intent": "other",

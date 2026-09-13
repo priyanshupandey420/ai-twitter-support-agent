@@ -3,3 +3,6 @@ anthropic
 scikit-learn
 kaggle
 tqdm
+requests
+python-dotenv
+google-generativeai
